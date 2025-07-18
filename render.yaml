@@ -5,9 +5,9 @@ services:
     plan: free
     buildCommand: "pip install -r requirements.txt"
     startCommand: "python main.py"
+    pythonVersion: 3.10  # 👈 questa riga forza Python 3.10
     envVars:
       - key: BOT_TOKEN
         sync: false
       - key: ADMIN_ID
         sync: false
-    pythonVersion: 3.10
