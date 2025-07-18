@@ -98,9 +98,6 @@ async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 # Avvio
 def main():
     app = Application.builder().token(BOT_TOKEN).build()
-    app.add_handler(CommandHandler("start", start))
-    app.add_handler(CallbackQueryHandler(button))
-    print("Bot avviato.")
     app.run_polling()
 
 if __name__ == "__main__":
