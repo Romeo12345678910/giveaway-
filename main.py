@@ -1,18 +1,12 @@
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 
-CONFIG
-
 ADMIN_ID = 7891425503
 CHANNEL_LINK = "https://t.me/solo_giveaway"
 BOT_TOKEN = "7729850503:AAG0uRGIhCkQgHibLeiT7zSbUO4nEQZvFdU"
 
-Stato globale
-
 partecipanti = 0
 obiettivo_raggiunto = False
-
-Start
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
 global partecipanti, obiettivo_raggiunto
@@ -41,8 +35,6 @@ else:
         f"\nPiù siamo, prima si chiude l’estrazione! 🎉"  
     )  
     await update.message.reply_text(text)
-
-Bottoni
 
 async def button(update: Update, context: ContextTypes.DEFAULT_TYPE):
 global partecipanti, obiettivo_raggiunto
@@ -98,8 +90,6 @@ keyboard = [
     [InlineKeyboardButton("🎯 Obiettivo Raggiunto", callback_data='done')]  
 ]  
 await query.edit_message_text(f"🎁 Partecipanti attuali: {partecipanti}", reply_markup=InlineKeyboardMarkup(keyboard))
-
-Avvio
 
 def main():
 app = Application.builder().token(BOT_TOKEN).build()
