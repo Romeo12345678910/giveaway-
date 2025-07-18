@@ -1,10 +1,11 @@
+import os
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, Update
 from telegram.ext import Application, CommandHandler, CallbackQueryHandler, ContextTypes
 
-# CONFIG
-ADMIN_ID = 7891425503
+# CONFIG: usa variabili ambiente per sicurezza
+ADMIN_ID = int(os.environ.get("ADMIN_ID", "7891425503"))
+BOT_TOKEN = os.environ.get("BOT_TOKEN")
 CHANNEL_LINK = "https://t.me/solo_giveaway"
-BOT_TOKEN = "7729850503:AAG0uRGIhCkQgHibLeiT7zSbUO4nEQZvFdU"
 
 # Stato globale
 partecipanti = 0
